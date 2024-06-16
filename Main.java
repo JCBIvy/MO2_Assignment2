@@ -79,9 +79,35 @@ class Triangle extends GeometricObject
 
 class Main
 {
-\    //Main body program
+    //Main body program
     public static void main(String []args)
     {
-        System.out.println("blah");
+        //create scanner object
+        Scanner inputScanner = new Scanner(System.in);
+
+        //get parameters for triangle
+        System.out.println("Enter the length of the triangle's first side:");
+        double inputSide1 = Double.parseDouble(inputScanner.nextLine());
+        System.out.println("Enter the length of the triangle's second side:");
+        double inputSide2 = Double.parseDouble(inputScanner.nextLine());
+        System.out.println("Enter the length of the triangle's third side:");
+        double inputSide3 = Double.parseDouble(inputScanner.nextLine());
+        System.out.println("Enter the color of the triangle:");
+        String inputColor = inputScanner.nextLine();
+        System.out.println("Enter whether or not the triangle is filled in (\"true\" or \"false\"):");
+        boolean inputIsFilled = Boolean.parseBoolean(inputScanner.nextLine());
+
+        //make the triangle object
+        Triangle triangle = new Triangle(inputSide1,inputSide2,inputSide3);
+        //adjust the features needed
+        triangle.setColor(inputColor);
+        triangle.setIsFilled(inputIsFilled);
+
+        //state the properties of the triangle
+        System.out.println("");
+        System.out.println("area: " + triangle.getArea());
+        System.out.println("perimeter: " + triangle.getPerimeter());
+        System.out.println("color: " + triangle.getColor());
+        System.out.println("is filled in: " + triangle.getIsFilled());
     }
 };
