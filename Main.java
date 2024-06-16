@@ -60,8 +60,8 @@ class Triangle extends GeometricObject
     public double getArea()
     {
         //solve for the area using the area-from-sides formula
-        double semiPeri = this.getArea() / 2.0;
-        return ( Math.sqrt( semiPeri * (semiPeri - this.side1) * (semiPeri - this.side2) * (semiPeri - this.side2) ) );
+        double semiPeri = this.getPerimeter() / 2.0;
+        return ( Math.sqrt( semiPeri * (semiPeri - this.side1) * (semiPeri - this.side2) * (semiPeri - this.side3) ) );
     }
 
     //get side functions
